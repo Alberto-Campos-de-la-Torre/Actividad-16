@@ -43,11 +43,6 @@ class Grafo:
     def  Grafo(self):
         return self.__grafo
     
-    def quitar_peso(self):
-        self.__2grafo = self.__grafo.copy()      
-        for i in self.__grafo:
-         self.__2grafo[i] = [x[0] for x in self.__grafo[i]]
-
     def algoritmo_busqueda_profundidad(self,origen):
 
         visitados = deque()
@@ -62,9 +57,9 @@ class Grafo:
             recorrido.append(vertice)
             pila.pop()  
 
-            adyacentes = self.__2grafo[vertice]
+            adyacentes = self.__grafo[vertice]
             for i in adyacentes:
-                ady = i
+                ady = i[0]
                 if ady not in visitados:
                     visitados.append(ady)
                     pila.append(ady)
@@ -85,9 +80,9 @@ class Grafo:
             recorrido.append(vertice)
             del cola[0]
                               
-            adyacentes = self.__2grafo[vertice]
+            adyacentes = self.__grafo[vertice]
             for i in adyacentes:
-                ady = i
+                ady = i[0]
                 if ady not in visitados:
                     visitados.append(ady)
                     cola.append(ady)    

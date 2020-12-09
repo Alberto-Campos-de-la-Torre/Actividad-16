@@ -274,7 +274,6 @@ class MainWindow(QMainWindow):
     @Slot()
     def busqueda_grafos(self):
         
-        self.grafo.quitar_peso()
         self.ui.salida.clear()
 
         origen = (self.ui.OrigenX.value() , self.ui.OrigenY.value())
